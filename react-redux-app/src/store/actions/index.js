@@ -7,17 +7,17 @@ export const FETCHING_CHARACTER_FAILURE = "FETCHING_CHARACTER_FAILURE";
 export const getCharacter = () => dispatch => {
     dispatch({  type: FETCHING_CHARACTER_START });
 
-    axios 
+    axios
     .get('https://www.moogleapi.com/api/v1/characters')
     .then(res => {
-        console.log("res: ", res);
-        dispatch({ type: FETCHING_CHARACTER_SUCCESS, payload: res.data })
+        console.log("res.data: ", res.data);
+        dispatch({ type: FETCHING_CHARACTER_SUCCESS, payload: res.data})
     })
     .catch(err => {
         console.log('Err', err);
         dispatch({
             type: FETCHING_CHARACTER_FAILURE,
-            payload: `${err.response.message} with response code ${err.response.code}`
+            payload: `Error retrieving data!`
         });
     });
 };

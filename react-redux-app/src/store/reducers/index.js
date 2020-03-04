@@ -1,7 +1,7 @@
 import { FETCHING_CHARACTER_START, FETCHING_CHARACTER_SUCCESS } from '../actions';
 
 const initialState = {
-    character: null,
+    character: [],
     isFetching: false,
     error: ""
 };
